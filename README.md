@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# Chuck Milliken – Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website for **Charles "Chuck" Milliken**, Full Stack Web Developer based in Fairview, TX. The site showcases application development work, WordPress website projects, and professional experience.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The portfolio is a single-page application built with **React 19**, **TypeScript**, and **Vite**. It features a dark, tech-inspired aesthetic using **Material UI v7**, lazy-loaded route-based code splitting, and a custom image gallery with lightbox support. A pre-build script auto-generates optimized thumbnails for all portfolio images.
 
-## React Compiler
+## Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Route | Description |
+|---|---|
+| `/` | Hero landing page with stats and a brief intro |
+| `/application-portfolio` | Full-stack and mobile application projects with image galleries |
+| `/website-portfolio` | WordPress and custom website projects |
+| `/experience` | Work history and professional background |
+| `/contact` | Contact form and links |
 
-## Expanding the ESLint configuration
+## Featured Projects
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **TradeCatalyst RN** – Cryptocurrency trading mobile app converted from Svelte PWA to React Native / Expo
+- **EJ's Live Auction** – Real-time auction platform built with Next.js, Socket.IO, and a Node.js WebSocket server
+- **Storage Auction Solutions** – SvelteKit + Firebase replacement for a legacy ColdFusion auction system
+- **Funnel Science SaaS** – Flagship predictive sales & marketing analytics platform (tech details under NDA)
+- **TradeCatalyst PWA** – Original Svelte-based cryptocurrency trading progressive web app
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Framework:** React 19, TypeScript
+- **Build:** Vite
+- **UI:** Material UI v7, Emotion
+- **Routing:** React Router v7
+- **Thumbnails:** Custom Node.js pre-build script (`scripts/generate-thumbnails.mjs`)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Available Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Script | Description |
+|---|---|
+| `npm run dev` | Start the Vite dev server |
+| `npm run build` | Generate thumbnails, type-check, and build for production |
+| `npm run thumbnails` | Run the thumbnail generator manually |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint |
