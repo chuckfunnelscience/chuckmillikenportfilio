@@ -22,6 +22,24 @@ const localImage = (path: string, alt: string): GalleryImage => ({
 
 export const applicationProjects: ApplicationProject[] = [
   {
+    title: 'Copycastr – AI-Powered Content Discovery for Agencies',
+    summary: [
+      'Copycastr is a voice-first web app for digital agencies that automates the client content discovery process.',
+      'Instead of chasing clients for text and brand information, agencies send their clients a link. The client answers a conversational AI interview — by voice or text — and Copycastr synthesizes the transcript into polished, SEO and AIO-optimized website copy, ready to drop into any CMS.',
+    ],
+    stack: 'React, Next.js, TypeScript, Material UI, Supabase, Node.js, Vercel',
+    images: [
+      localImage('portfolio/copycastr/cc-home.png', 'Copycastr - Home Page'),
+      localImage('portfolio/copycastr/cc-features.png', 'Copycastr - Features'),
+      localImage('portfolio/copycastr/cc-invite.png', 'Copycastr - Client Interview Invite'),
+      localImage('portfolio/copycastr/cc-results.png', 'Copycastr - Generated Copy Results'),
+      localImage('portfolio/copycastr/cc-clients.png', 'Copycastr - Clients Dashboard'),
+      localImage('portfolio/copycastr/cc-about.png', 'Copycastr - About'),
+      localImage('portfolio/copycastr/cc-pricing.png', 'Copycastr - Pricing'),
+      localImage('portfolio/copycastr/cc-billing.png', 'Copycastr - Billing'),
+    ],
+  },
+  {
     title: 'Automated Trading App – Conversion to React Native',
     summary: [
       'This Mobile Application provides a streamlined interface for an advanced cryptocurrency trading system.',
